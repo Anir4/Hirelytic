@@ -1,4 +1,4 @@
-# CV Management System API
+# HR AI Assistant System 
 
 A FastAPI-based system for CV/resume processing, analysis, and semantic search with PostgreSQL storage and LLaMA model integration.
 
