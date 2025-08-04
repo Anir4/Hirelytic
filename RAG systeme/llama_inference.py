@@ -103,7 +103,7 @@ def get_available_models() -> list:
     return _ollama_client.get_available_models()
 
 
-def run_llama(prompt: str, model: str = 'llama3.2:3b', max_tokens: int = 600, 
+def run_llama(prompt: str, model: str = 'llama3.2:3b', max_tokens: int = 1000, 
               temperature: float = 0.7, **kwargs) -> str:
     """
     Fast LLaMA inference using REST API.

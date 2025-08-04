@@ -908,22 +908,40 @@ async def root():
         ],
         "endpoints": {
             "auth": {
-                "register": "/auth/register",
-                "login": "/auth/login",
-                "profile": "/auth/me"
+                "register": "POST /auth/register",
+                "login": "POST /auth/login",
+                "profile": "GET /auth/me"
             },
-            "main": {
-                "query": "/query?q=your_question",
-                "files": "/api/files",
-                "upload": "/api/upload",
-                "candidates": "/candidates",
-                "chats": "/api/chats"
+            "query": {
+                "search_cvs": "GET /query?q=your_question"
+            },
+            "files": {
+                "list_files": "GET /api/files",
+                "upload_file": "POST /api/upload",
+                "delete_file": "DELETE /api/files/{cv_id}",
+                "download_file": "GET /api/files/download/{cv_id}",
+                "view_file": "GET /api/files/view/{cv_id}"
+            },
+            "candidates": {
+                "list_candidates": "GET /candidates",
+                "get_candidate": "GET /candidates/{cv_id}"
             },
             "dashboard": {
-                "stats": "/api/dashboard/stats",
-                "recent": "/api/dashboard/recent"
+                "stats": "GET /api/dashboard/stats",
+                "recent_activity": "GET /api/dashboard/recent"
+            },
+            "chat": {
+                "chat_history": "GET /api/chats"
+            },
+            "maintenance": {
+                "rebuild_embeddings": "POST /api/maintenance/rebuild-embeddings"
+            },
+            "system": {
+                "health_check": "GET /health",
+                "root_info": "GET /"
             }
-        }
+        },
+        "authentication": "Required for all endpoints except /health and / - use Bearer token in Authorization header"
     }
 
 @app.get("/health")
