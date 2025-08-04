@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+*.pyo
+data/pdfs/*.pdf
+.env
+*.db
+cv_ner_roberta_optimized/

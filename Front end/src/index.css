@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Modern SaaS HR Assistant Design System - Professional & Clean */
+
+@layer base {
+  :root {
+    /* Base colors - Clean and professional */
+    --background: 0 0% 100%;
+    --foreground: 224 16% 12%;
+    
+    /* Card system */
+    --card: 0 0% 100%;
+    --card-foreground: 224 16% 12%;
+    
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 16% 12%;
+    
+    /* Primary brand - Professional blue */
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 217 91% 55%;
+    
+    /* Secondary - Subtle gray */
+    --secondary: 220 13% 96%;
+    --secondary-foreground: 224 16% 12%;
+    
+    /* Muted - For subtle backgrounds */
+    --muted: 220 13% 96%;
+    --muted-foreground: 220 9% 46%;
+    
+    /* Accent - For highlights */
+    --accent: 220 13% 96%;
+    --accent-foreground: 224 16% 12%;
+    
+    /* Success state */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    
+    /* Warning state */
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Borders and inputs */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 217 91% 60%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(217 91% 70%));
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(220 13% 98%));
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.1);
+    
+    /* Radius */
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode - Professional and easy on the eyes */
+    --background: 224 16% 6%;
+    --foreground: 220 13% 91%;
+    
+    /* Card system - Dark */
+    --card: 224 16% 8%;
+    --card-foreground: 220 13% 91%;
+    
+    /* Popover - Dark */
+    --popover: 224 16% 8%;
+    --popover-foreground: 220 13% 91%;
+    
+    /* Primary brand - Brighter blue for dark mode */
+    --primary: 217 91% 65%;
+    --primary-foreground: 224 16% 6%;
+    --primary-hover: 217 91% 70%;
+    
+    /* Secondary - Dark gray */
+    --secondary: 224 16% 12%;
+    --secondary-foreground: 220 13% 91%;
+    
+    /* Muted - Dark */
+    --muted: 224 16% 12%;
+    --muted-foreground: 220 9% 60%;
+    
+    /* Accent - Dark */
+    --accent: 224 16% 12%;
+    --accent-foreground: 220 13% 91%;
+    
+    /* Success state - Dark */
+    --success: 142 71% 55%;
+    --success-foreground: 224 16% 6%;
+    
+    /* Warning state - Dark */
+    --warning: 38 92% 60%;
+    --warning-foreground: 224 16% 6%;
+    
+    /* Destructive - Dark */
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 224 16% 6%;
+    
+    /* Borders and inputs - Dark */
+    --border: 224 16% 20%;
+    --input: 224 16% 20%;
+    --ring: 217 91% 65%;
+    
+    /* Gradients - Dark */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 65%), hsl(217 91% 75%));
+    --gradient-subtle: linear-gradient(180deg, hsl(224 16% 6%), hsl(224 16% 8%));
+    
+    /* Sidebar - Dark */
+    --sidebar-background: 224 16% 4%;
+    --sidebar-foreground: 220 13% 91%;
+    --sidebar-primary: 217 91% 65%;
+    --sidebar-primary-foreground: 224 16% 6%;
+    --sidebar-accent: 224 16% 10%;
+    --sidebar-accent-foreground: 220 13% 91%;
+    --sidebar-border: 224 16% 16%;
+    --sidebar-ring: 217 91% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
