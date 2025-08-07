@@ -16,11 +16,16 @@ A FastAPI-based system for CV/resume processing, analysis, and semantic search w
 
 ```mermaid
 graph TD
-    A[Frontend] -->|JWT Auth| B[FastAPI Backend]
-    B --> C[PostgreSQL DB]
-    B --> D[FAISS Vector Store]
-    B --> E[LLaMA Model]
-    B --> F[PDF Storage]
+    U[User Message] --> A[Frontend]
+    A -->|Send message| B[FastAPI Backend]
+    
+    B -->|Query| D[FAISS Vector Store]
+    D -->|Retrieve CV Embeddings| C[PostgreSQL DB]
+    
+    C -->|Return CV Text| B
+    B -->|Construct Prompt| E[Ollama 3.2]
+    E -->|Answer| B
+    B -->|Response| A
 ```
 
 ## Core Components
@@ -76,12 +81,13 @@ graph TD
 
 1. Install dependencies:
 ```bash
+Download Ollama 3.2 and PostgreSQL
 pip install -r requirements.txt
 ```
 
 2. Configure environment variables in `.env`:
 ```env
-DATABASE_URL=postgresql://user:password@localhost:5432/dbname
+DATABASE_URL=postgresql://"user":"password"@localhost:5432/hirelytic
 JWT_SECRET_KEY=your_secret_key
 ```
 
@@ -89,6 +95,7 @@ JWT_SECRET_KEY=your_secret_key
 ```bash
 uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 ```
+when the server runs it will build the DB and boots the Ollama server
 
 The api will run on `http://localhost:8000`
 
